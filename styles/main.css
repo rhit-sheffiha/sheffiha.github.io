@@ -1,29 +1,74 @@
+:root {
+    --platinum: #D8DBE2;
+    --powder-blue: #a9bcd0;
+    --moonstone: #58A4B0;
+    --charcoal: #373F51;
+    --erie-black: #1b1b1e;
+    
+}
+
+body, body > * {
+    background-color: var(--platinum);
+}
+
 p {
     max-width: 50em;
 }
 
+.wrapText {
+    text-wrap: wrap;
+}
+
 body{
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.5em;
-    padding-left: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
     padding-top: 2em;
 }
 
-body > * {
-    padding: 1.5rem;
-}
-
 header{
-    font-size: 2em;
-    font-weight: bold;
+    background-color: #FFFFFF2F;
 }
 
-header, footer{
-    padding: .5em 0em 1em 0em;
+
+
+nav {
+    padding: 0;
+}
+
+/* main {
+    padding: 0 1rem;
+} */
+
+.topText {
+    margin-top: 0;
+}
+
+footer{
+    padding: .25em 0em .75em 0em;
+    line-height: normal;
+}
+
+.topName {
+    line-height: normal;
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0 0 .25em 0; 
+    color: var(--moonstone);
+    border-bottom: .1em solid var(--moonstone);
+    font-family: 'IBM Plex Serif', 'Cinzel', 'Cormorant', 'Amiri';
+}
+
+.topic {
+    border-bottom: .1em solid var(--erie-black); 
+    color: var(--erie-black);
+    font-size: 2.5em;
 }
 
 h1, h2, h3 {
     line-height: 1em;
+    margin: 0 0 .5em 0;
 }
 
 #contact {
@@ -32,7 +77,13 @@ h1, h2, h3 {
 }
 
 body#about img{
-    height: 20em;
+    height: 25em;
+}
+
+.navButtons {
+    text-align: center;
+    font-size: 1.25em;
+    padding: 0.5em;
 }
 
 
@@ -43,18 +94,37 @@ body{
                          "nav nav"
                          "main main"
                          "foot foot";
-    grid-template-columns: 10em 1fr;
-    
+    grid-template-columns: 7em 1fr;
 }
 
 img {
     max-width: 15em;
 }
 
+#topButton {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: var(--charcoal); /* Set a background color */
+    color: var(--powder-blue); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #topButton:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
 @media screen and (min-width: 25em) {
     body {
         grid-template-areas: "head head"
-                            "nav main"
+                            "main main"
                             "foot foot";
     }
     img {
@@ -77,3 +147,4 @@ body > main {
 body > footer{
     grid-area: foot;
 }
+
